@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documents publics HellSoftware - Politiques de confidentialité et informations légales">
+    <title>HellSoftware - Documents Publics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg-dark: #0a0a0a;
+            --color-bg-overlay: rgba(20, 20, 20, 0.95);
+            --color-primary-cyan: #00ced1;
+            --color-primary-red: #dc143c;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #b0b0b0;
+            --color-text-muted: #888888;
+            --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family-base);
+            background: var(--color-bg-dark);
+            color: var(--color-text-primary);
+            line-height: 1.8;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary-cyan);
+            text-shadow: 0 0 20px rgba(0, 206, 209, 0.5);
+        }
+
+        .subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: var(--color-bg-overlay);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 206, 209, 0.3);
+            box-shadow: 0 0 30px rgba(0, 206, 209, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(0, 206, 209, 0.4);
+        }
+
+        .product-name {
+            font-size: 1.8rem;
+            color: var(--color-primary-cyan);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid rgba(0, 206, 209, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .product-description {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .documents-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .documents-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .doc-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--color-primary-cyan);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 206, 209, 0.1);
+            border-radius: 6px;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 206, 209, 0.3);
+        }
+
+        .doc-link:hover {
+            background: rgba(0, 206, 209, 0.2);
+            color: var(--color-primary-red);
+            border-color: var(--color-primary-red);
+            transform: translateX(5px);
+        }
+
+        .doc-link::before {
+            content: "📄";
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .doc-link[href$=".html"]::before {
+            content: "🌐";
+        }
+
+        .doc-link[href$=".md"]::before {
+            content: "📝";
+        }
+
+        .no-documents {
+            color: var(--color-text-muted);
+            font-style: italic;
+            padding: 1rem;
+            background: rgba(136, 136, 136, 0.1);
+            border-radius: 6px;
+            border-left: 3px solid var(--color-text-muted);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 206, 209, 0.3);
+            text-align: center;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--color-primary-cyan);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer a:hover {
+            color: var(--color-primary-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔒 HellSoftware</h1>
+            <p class="subtitle">Documents Publics - Politiques de Confidentialité et Informations Légales</p>
+        </header>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Les produits seront chargés dynamiquement via JavaScript -->
+        </div>
+
+        <footer class="footer">
+            <p>© 2025 HellSoftware - Tous droits réservés</p>
+            <p>Ce site regroupe tous les documents publics de nos produits</p>
+        </footer>
+    </div>
+
+    <script>
+        // Détecter le chemin de base pour GitHub Pages
+        const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+        const productsJsonPath = basePath ? `${basePath}/products.json` : 'products.json';
+        
+        // Charger la configuration depuis products.json
+        let products = [];
+        
+        async function loadProducts() {
+            try {
+                const response = await fetch(productsJsonPath);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                products = data.products;
+                renderProducts();
+            } catch (error) {
+                console.error('Erreur lors du chargement de products.json:', error);
+                // Fallback vers une configuration par défaut
+                products = [
+                    {
+                        name: "Daemon Image Snatcher",
+                        description: "Extension Chrome et Firefox pour scanner et télécharger des images depuis les pages web",
+                        documents: [
+                            {
+                                name: "Politique de Confidentialité (HTML)",
+                                url: basePath ? `${basePath}/Daemon-Image-Snatcher/privacy-policy.html` : "Daemon-Image-Snatcher/privacy-policy.html"
+                            },
+                            {
+                                name: "Politique de Confidentialité (Markdown)",
+                                url: basePath ? `${basePath}/Daemon-Image-Snatcher/privacy-policy.md` : "Daemon-Image-Snatcher/privacy-policy.md"
+                            }
+                        ]
+                    }
+                ];
+                renderProducts();
+            }
+        }
+
+        // Fonction pour générer les cartes de produits
+        function renderProducts() {
+            const grid = document.getElementById('products-grid');
+            
+            if (products.length === 0) {
+                grid.innerHTML = '<div class="product-card"><p class="no-documents">Aucun produit disponible pour le moment.</p></div>';
+                return;
+            }
+
+            grid.innerHTML = products.map(product => {
+                const documentsHtml = product.documents && product.documents.length > 0
+                    ? `<ul class="documents-list">
+                        ${product.documents.map(doc => {
+                            // Ajouter le chemin de base si nécessaire
+                            const docUrl = doc.url.startsWith('http') ? doc.url : (basePath ? `${basePath}/${doc.url}` : doc.url);
+                            return `<li><a href="${docUrl}" class="doc-link" target="_blank" rel="noopener noreferrer">${doc.name}</a></li>`;
+                        }).join('')}
+                       </ul>`
+                    : '<p class="no-documents">Aucun document disponible pour ce produit.</p>';
+
+                return `
+                    <div class="product-card">
+                        <h2 class="product-name">${product.name}</h2>
+                        ${product.description ? `<p class="product-description">${product.description}</p>` : ''}
+                        ${documentsHtml}
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Charger les produits au chargement de la page
+        document.addEventListener('DOMContentLoaded', loadProducts);
+    </script>
+</body>
+</html>
+
